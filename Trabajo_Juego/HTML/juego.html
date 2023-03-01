@@ -5,23 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/juego.css" type="text/css">
+    <script type="module" src="../JS/juego.js"></script>
+    <script type="module" src="../JS/Registro_Logeo_Firebase.js"></script>    
     <title>Juego DAW205</title>
 </head>
 <body>
-    <div class="Caja-elementos">
-        <div class="Caja Uno">
-            <form>
-                <label>Introduce tu nombre de jugador</label>
-                <input type="text" name="Nombre">
-                <label>Introduce tu password</label>
-                <input type="text" name="Contraseña">
-                <input type="submit" value="Comenzar la aventura">
-                <form>  
-                    <input type="submit" name="CrearHeroe" value="Generar un nuevo heroe">
-                </form>
-            </form>            
-        </div>
-        <div class="Caja Dos"></div>
+<div class="container">    
+    <div id="form-container"class="Parte1">
+        <form id="Formu">
+            <h1>REGISTRO Y LOGIN</h1>
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password: </label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <input type="button" value="REGISTER" class="btn btn-primary" id="ButtonRegister"></input>
+            <input type="button" value="LOGIN" class="btn btn-secondary" id="ButtonLogin"></input>
+        </form>
     </div>
+    <div></div>
+</div>
 </body>
 </html>
+  
