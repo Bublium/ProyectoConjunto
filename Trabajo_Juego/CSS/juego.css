@@ -12,14 +12,14 @@ body
     height: 100vh;
     display: flex;
     text-align: center;
-    background: url(https://i.pinimg.com/736x/4a/25/1e/4a251e0f3c3c74c62fdbd99f97778474.jpg);    
+    background: url(https://i0.wp.com/www.mattvince.com/wp-content/uploads/2019/11/Outset-Island-animtest7.gif?fit=642%2C361&ssl=1);    
     background-size: 100% 100%;
     justify-content: center;
     background-repeat: no-repeat;
 }
 h1
 {
-    font-size: 32px;
+    font-size: 28px;
 }
 div
 {
@@ -77,4 +77,22 @@ input[type="button"]:hover
     {
         background: brown;
     }
+}
+table
+{    
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7a54f05-9bc2-4bfe-ab91-195fde365146/depm1f9-5316e82b-8fc9-4259-af89-559f533d6eca.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M3YTU0ZjA1LTliYzItNGJmZS1hYjkxLTE5NWZkZTM2NTE0NlwvZGVwbTFmOS01MzE2ZTgyYi04ZmM5LTQyNTktYWY4OS01NTlmNTMzZDZlY2EuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.9vvKCjr1EbJOnRxhQmHAYyePhFoqcMlVJqN9ZHkzccs);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+tr, td
+{
+    border: 2px solid black;
+}
+td
+{
+    background: url(https://www.pixelatoy.com/87021-home_default/cofre-raro-1000-monedas.jpg); /* Cofre abierto https://www.pixelatoy.com/87020-home_default/cofre-raro-1000-monedas.jpg Cofre cerrado https://www.pixelatoy.com/87021-home_default/cofre-raro-1000-monedas.jpg*/
+    background-size: 100%;
 }

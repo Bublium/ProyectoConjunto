@@ -24,7 +24,6 @@ function login()
     var email = document.getElementById("email").value;
     var password = document.getElementById('password').value;
     const auth = getAuth();
-    alert(`auth: ${auth} email: ${email}   password: ${password}`)
     signInWithEmailAndPassword(auth,email, password)
     .then(function(user) 
         {
@@ -44,17 +43,15 @@ function login()
 
 function registro() {
     console.log("REGISTRADO");
-    alert("REGISTRADO")
+    alert("REGISTRADO");
     var email = document.getElementById("email").value;;
     var password = document.getElementById('password').value;
     const auth = getAuth();
-    alert(`auth: ${auth} email: ${email} password: ${password}`)
     createUserWithEmailAndPassword(auth,email, password)
     .then(function(user) 
         {
             console.log("User registered: ", user);
             // Redirigir al panel de usuario o mostrar un mensaje
-            alert("User registered: ", user)
             ActivaBoton();
         }
     )
