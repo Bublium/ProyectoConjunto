@@ -35,7 +35,7 @@ function login()
     .catch(function(error) 
         {
             console.log("Error logging in: ", error);
-            alert("Error logging in: ", error)
+            alert("Error al loguearse: ", error)
             // Mostrar mensaje de error
         }
     );
@@ -59,7 +59,7 @@ function registro() {
         {
             console.log("Error registering: ", error);
             // Mostar mensaje de error
-            alert("Error registering: ", error);
+            alert("Error al registrarse: ", error);
         }
     );
 }
@@ -86,4 +86,5 @@ function ActivaBoton()
     let Juega = document.getElementById("Jugar");
     Juega.disabled = false;
 }
+
 window.onload=inicio;
