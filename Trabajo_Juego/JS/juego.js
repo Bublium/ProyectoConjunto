@@ -146,10 +146,6 @@ function Dice()
         let myDice3D = document.createElement("div");
         myDice3D.className = "myDice3D";
         myDiv3D.appendChild(myDice3D);
-        
-        let myBase = document.createElement("div");
-        myBase.className = "myBase";
-        myDice3D.appendChild(myBase);
 
         let myFace1 = document.createElement("aside");
         myFace1.className = "myFace myFace1";
@@ -234,9 +230,13 @@ function Dice()
         DiceButton.before(myRollsDiv);
         myRollsDiv.appendChild(myH2);
 
-        Sections(result);
+        setTimeout(() =>
+        {
+            Sections(result);
+        }, 1500);
     }
 }
+
 function Sections(result)
 {
     for(let i = 0; i < 10; i++)
