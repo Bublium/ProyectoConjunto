@@ -1,8 +1,18 @@
 'use strict'
 
+/* 
+    Inicializacion de variables de:
+    - Contador de tiradas del dado 
+    - Controlador de juego para ver si se puede seguir jugando o no
+*/
 let contadorTiradas = 0;
 let controladorPartida = false;
 
+/* 
+    Funcion principal "Jugar" en la cual se genera:
+    - Un input de tipo boton que se agrega al formulario de inicio de sesion / registro pero que esta desactivado
+    - EventListener del boton de jugar que llama a la funcion de Juego
+*/
 function Jugar()
 {       
     let FormHelp = document.getElementById("Formu"); 
@@ -22,6 +32,14 @@ function Jugar()
     )
 }
 
+/*
+    Funcion de "Juego"
+    - En esta funcion lo que se lleva a cabo es la limpieza del div con id Contenedor y la creacion de 
+    - un espacio para el tablero de juego, un div extra y un boton de "Tirar el dado"
+    - Posterior a la creacion de los elementos estos se introducen en sus correspondientes espacios.
+    - Tambien se llama a la funcion que tiene como uso "Tirar el dado" y se crean unas coordenadas
+    - del tablero de juego.
+*/
 function Juego()
 {
     let myDivContent = document.getElementById("Contenedor");
@@ -51,7 +69,17 @@ function Juego()
     let positionY = 0;
     TableGeneration(`${positionX}${positionY}`);
 }
+/*
+    Funcion "Generacion de Tablero"
+    - En esta funcion se lleva a cabo la generacion de un tablero de juego con una posicion inicial
+    - pasada por parametros en la funcion anterior. Tambien se inserta el elemento img que hace
+    - referencia al sprite / imagen del personaje. 
 
+    Funciones que engloba:
+        Si el tablero ya ha sido creado anteriormente este ultimo es borrado para generar otro con los valores del anterior.
+        Se les da a las celdas una id para ser identificadas en cuanto a los movimientos que tenga el jugador.
+        Si una de las celdas tiene el id 99 esta contendra una clase y una futura alerta en caso de llegar a ella.
+*/
 function TableGeneration(initialPosition)
 {
     let myTablero = document.getElementById("Tablero");
@@ -100,6 +128,12 @@ function TableGeneration(initialPosition)
     }
 }
 
+/*
+    Funcion "Tirar dado"
+    - Esta funcion es muy basica en cuanto a comportamiento y este lo unico que hace es introducir
+    - el boton de "Tirar el dado" en su correspondiente espacio(div).
+    - Seguido de esto el boton es administrado con una evento click que llama a la funcion de "Construir Dado"
+*/
 function DiceThrow()
 {
     let DivExtras = document.getElementById("DivExtras");
@@ -111,6 +145,23 @@ function DiceThrow()
         }
     )
 }
+
+/*
+    Funcion "Construir Dado"
+    - Principalmente esta funcion se encarga de la generacion de dado y sus correspondientes caras y la
+    - insercion de estas en su correspondiente lugar.
+    - A parte lleva a cabo la recogida de tiradas y el uso del controlador de partida generado anteriormente.
+
+    Funciones que engloba:
+        Si el dado ya ha sido tirado se obtiene un texto y si existe se quita.
+        Se genera un resultado aleatorio con valores del 1 al 6 y mientras sea resultado 0 se realizara otra vez.
+        Se recoge un div por id y si ya existia se borra para generar uno nuevo. En este tambien se insertan
+            el boton de "Tirar el dado" y un div que contiene el dado en cuestion con sus caras. Tambien se 
+            inserta un texto informativo de las tiradas ejecutadas por el jugador.
+        Por ultimo se le agrega un timeout a la llamada de funcion de "Casillas" de un tiempo de 1.5 segundos
+            para que el jugador vea terminar la animacion del dado antes de ver las casillas a las que se puede
+            desplazar.
+*/
 function Dice()
 {
     let myDivExtras = document.getElementById("myDivExtras");
@@ -237,6 +288,16 @@ function Dice()
     }
 }
 
+/*
+    Funcion "Casillas"
+    - Esta funcion consiste principalmente en la generacion de las casillas a las que el jugador se
+    - puede desplazar. Esta funcion consta de un parametro dado en la funcion de "Construir dado".
+    - Al inicio de esta se recogen mediante id el tablero y la posicion inicial, la cual sirve
+    - como variable origen a la hora de contar las casillas a desplazar y seleccionarlas.
+    - A las casillas desplazables se les añade una clase para mostrar con css el lugar de desplazamiento.
+    - En caso de no tener una casilla a la cual desplazarse por falta de casillas adyacentes el
+    - jugador recibira un alert con un mensaje de que vuelva a tirar.
+*/
 function Sections(result)
 {
     for(let i = 0; i < 10; i++)
